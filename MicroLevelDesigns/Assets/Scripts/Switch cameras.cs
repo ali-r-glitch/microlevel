@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -16,9 +17,13 @@ public class Switchcameras : MonoBehaviour
     public float angularSpeed = 1f;
     public float circleRad = 1f;
 
+    public Vector3[] V2dpoints;
+    
+    
     private Vector3 perpendicular;
     private Vector3 fixedPoint;
     private float currentAngle;
+    
     
 
     private Vector3 offset;
@@ -38,13 +43,11 @@ public class Switchcameras : MonoBehaviour
         {
             Move3dCAmera();
         }
-        else
-        {
-            /*Move2dcamera();
-            planemaker();*/
-        }
+       
 
     }
+
+    
 
     private void planemaker()
     {
@@ -59,10 +62,12 @@ public class Switchcameras : MonoBehaviour
         
 
     }
+  
 
-    private void Move2dcamera()
+    private void Move2dcamera(Vector3 target)
     {
-        twodcam.transform.LookAt(player.transform);
+        twodcam.transform.position = target;
+        
     }
 
     void ChangeCamera()
