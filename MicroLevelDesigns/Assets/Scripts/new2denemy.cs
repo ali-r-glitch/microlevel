@@ -46,7 +46,7 @@ public class new2denemy : MonoBehaviour
     private void FixedUpdate()
     {
         CheckGrounded();
-        testdirection();
+
         if (isgrounde)
         {
             
@@ -97,8 +97,16 @@ public class new2denemy : MonoBehaviour
 
     public void bonked()
     {
-        transform.Rotate(0, 0, 180);
-        traveldir = transform.right;
+       
+            // Flip the direction manually
+            traveldir.x *= -1f;
+
+            // Flip the visual by flipping the scale
+            Vector3 scale = transform.localScale;
+            scale.x *= -1f;
+            transform.localScale = scale;
+        
+
     }
 
     public void swap()

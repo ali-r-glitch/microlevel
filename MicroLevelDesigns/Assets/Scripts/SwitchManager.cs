@@ -12,7 +12,8 @@ public class SwitchManager : MonoBehaviour
     private new2denemy scripts2d;
     private New3dplayer scripts3d;
     bool b3d=true;
-    
+    public GameObject player3d;
+    public GameObject player2d;
     // Start is called before the first frame update
     void Start()
     {
@@ -41,6 +42,10 @@ public class SwitchManager : MonoBehaviour
                 */
                 scripts2d= objects2d[i].GetComponent<new2denemy>();
                 scripts2d.swap();
+                player2d.SetActive(true);
+                player2d.transform.position=player3d.transform.position;
+                player3d.SetActive(false);
+                
             }
             else
             {
@@ -50,6 +55,9 @@ public class SwitchManager : MonoBehaviour
                 */
                 scripts3d= objects3d[i].GetComponent<New3dplayer>();
                 scripts3d.swap();
+                player3d.SetActive(true);
+                player3d.transform.position=player2d.transform.position;
+                player2d.SetActive(false);
             }
             
         }
