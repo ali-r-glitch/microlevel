@@ -6,8 +6,8 @@ using UnityEngine;
 public class new2denemy : MonoBehaviour
 {
     [SerializeField] private bool isgrounde;
-    private Vector3 traveldir;
-    private bool bright;
+    public Vector3 traveldir;
+    public bool bright;
 
     [SerializeField]private float speed;
     // Start is called before the first frame update
@@ -15,8 +15,8 @@ public class new2denemy : MonoBehaviour
     private void Awake()
     {
         rb = GetComponent<Rigidbody>();
-        traveldir = transform.right;
-        bright = true;
+        traveldir = -transform.right;
+        bright = false;
     }
 
 
@@ -59,25 +59,14 @@ public class new2denemy : MonoBehaviour
 
     private void move()
     {
-       transform.position += traveldir * speed ;
+       transform.position += traveldir * speed*Time.deltaTime ;
         
     }
 
     public void bonked()
     {
-      
-            
-            if (bright)
-            {
-                Debug.Log("left");
-                traveldir = -transform.right;
-            }else
-            {
-                Debug.Log("right");
-                traveldir = transform.right;
-            }
-            bright = !bright;
-            transform.Rotate(0,0,180);
-        
+        transform.Rotate(0, 0, 180);
+        traveldir = transform.right;
     }
+
 }
