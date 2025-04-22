@@ -69,12 +69,7 @@ public class new2denemy : MonoBehaviour
       transform.position+=Vector3.back*9.8f*Time.deltaTime;
     }
 
-    private void Update()
-    {
-        testdirection();
-        
-    }
-
+   
     private void testdirection()
     {
         if (Input.GetKeyDown(KeyCode.Space))

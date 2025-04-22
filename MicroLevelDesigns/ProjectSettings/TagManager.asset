@@ -6,6 +6,7 @@ TagManager:
   tags:
   - 2d
   - 3d
+  - GroundLayer
   layers:
   - Default
   - TransparentFX
