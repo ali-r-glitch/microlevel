@@ -30,4 +30,12 @@ public class New3dplayer : MonoBehaviour
         this.gameObject.SetActive(false);
     
     }
+
+   public void kill()
+    {
+       
+            Destroy(othergaem);
+            Destroy(this.gameObject);
+        
+    }
 }

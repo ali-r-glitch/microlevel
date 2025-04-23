@@ -24,6 +24,14 @@ public class new2denemy : MonoBehaviour
         bright = false;
     }
 
+    public void kill()
+    {
+       
+        Destroy(othergaem);
+        Destroy(this.gameObject);
+        
+    }
+
     private void CheckGrounded()
     {
         Ray ray = new Ray(transform.position, Vector3.back);

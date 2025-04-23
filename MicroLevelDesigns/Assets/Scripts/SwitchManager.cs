@@ -11,13 +11,20 @@ public class SwitchManager : MonoBehaviour
     public GameObject[] objects2d;
     private new2denemy scripts2d;
     private New3dplayer scripts3d;
-    bool b3d=true;
+    bool b3d = true;
     public GameObject player3d;
+
     public GameObject player2d;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+
+    }
+
+    public void deathscreen()
+    {
+        Debug.Log("deathscreen");
     }
 
     // Update is called once per frame
@@ -32,34 +39,41 @@ public class SwitchManager : MonoBehaviour
 
     void swictch()
     {
+        if (b3d)
+        {
+            cam3d.orthographic = false;
+            player2d.SetActive(true);
+            player2d.transform.position = player3d.transform.position;
+            player3d.SetActive(false);
+        }
+        else
+        {
+            cam3d.orthographic = true;
+            player3d.SetActive(true);
+            player3d.transform.position = player2d.transform.position;
+            player2d.SetActive(false);
+        }
+
         for (int i = 0; i < objects3d.Length; i++)
         {
             if (b3d)
             {
-                cam3d.orthographic = false;
-                /*cam3d.enabled = false;
-                cam2d.enabled = true;
-                */
-                scripts2d= objects2d[i].GetComponent<new2denemy>();
-                scripts2d.swap();
-                player2d.SetActive(true);
-                player2d.transform.position=player3d.transform.position;
-                player3d.SetActive(false);
-                
+                if (objects2d[i] != null)
+                {
+                    scripts2d = objects2d[i].GetComponent<new2denemy>();
+                    if (scripts2d != null)
+                        scripts2d.swap();
+                }
             }
             else
             {
-                cam3d.orthographic = true;
-                /*cam2d.enabled = false;
-                cam3d.enabled = true;
-                */
-                scripts3d= objects3d[i].GetComponent<New3dplayer>();
-                scripts3d.swap();
-                player3d.SetActive(true);
-                player3d.transform.position=player2d.transform.position;
-                player2d.SetActive(false);
+                if (objects3d[i] != null)
+                {
+                    scripts3d = objects3d[i].GetComponent<New3dplayer>();
+                    if (scripts3d != null)
+                        scripts3d.swap();
+                }
             }
-            
         }
 
         b3d = !b3d;

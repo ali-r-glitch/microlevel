@@ -6,12 +6,13 @@ public class Player2d : MonoBehaviour
 {
     [SerializeField] private float moveSpeed = 5f;
     [SerializeField] private float gravityStrength = 9.8f;
-    [SerializeField] private float jumpForce = 5f;   // 👈 New: how strong the jump is
+    [SerializeField] private float jumpForce = 5f;   
     private float groundCheckDistance = 5f;
     [SerializeField] private LayerMask groundLayer;
     private Vector3 velocity;
     private bool isGrounded;
     private bool floor;
+    public SwitchManager switchManager;
 
     void Update()
     {
@@ -53,7 +54,7 @@ public class Player2d : MonoBehaviour
 
         transform.position += velocity * Time.deltaTime;
 
-        // 🚀 Jumping!
+        
         if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
         {
             velocity = -Vector3.back * jumpForce;  // push in the opposite of gravity (up is -back)
@@ -63,12 +64,22 @@ public class Player2d : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
+        if (collision.gameObject.CompareTag("enemy")||collision.gameObject.CompareTag("Spike"))
+        {
+            switchManager.deathscreen();
+        }
         if (collision.gameObject.CompareTag("GroundLayer"))
         {
             Debug.Log("Hit ground: " + collision.gameObject.name);
             isGrounded = true;
             velocity = Vector3.zero;
         }
+    }
+    public void kill()
+    {
+        switchManager.deathscreen();
+        
+        
     }
 
     private void OnCollisionExit(Collision collision)

@@ -242,6 +242,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 10
+  switchManager: {fileID: 0}
 --- !u!54 &126088664
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1753,7 +1754,7 @@ GameObject:
   - component: {fileID: 1448119646}
   m_Layer: 0
   m_Name: gamemanage
-  m_TagString: Player
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1829,6 +1830,10 @@ MonoBehaviour:
   moveSpeed: 18
   gravityStrength: 9.8
   jumpForce: 5
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 8
+  switchManager: {fileID: 0}
 --- !u!65 &1553927446
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2340,37 +2345,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!1 &1826054890
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1826054891}
-  m_Layer: 0
-  m_Name: enemies2d
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1826054891
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1826054890}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -49.08284, y: 8.193152, z: 72.02789}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2053622122
 GameObject:
   m_ObjectHideFlags: 0
@@ -2490,6 +2464,5 @@ SceneRoots:
   - {fileID: 1035696872}
   - {fileID: 1553927449}
   - {fileID: 126088662}
-  - {fileID: 1826054891}
   - {fileID: 1805185791}
   - {fileID: 1448119647}

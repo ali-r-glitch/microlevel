@@ -6,10 +6,7 @@ using UnityEngine;
 public class Playermove : MonoBehaviour
 {
     public float moveSpeed;
-    // Start is called before the first frame update
-  
-
-    // Update is called once per frame
+    public SwitchManager switchManager;
     private void FixedUpdate()
     {
         float moveX = Input.GetAxisRaw("Horizontal"); // A/D or Left/Right arrows
@@ -17,5 +14,13 @@ public class Playermove : MonoBehaviour
 
         Vector3 moveDir = new Vector3(moveX, 0f, moveZ).normalized;
         transform.position += moveDir * moveSpeed * Time.deltaTime;
+    }
+
+    private void OnCollisionEnter(Collision other)
+    {
+        if (other.gameObject.CompareTag("enemy")||other.gameObject.CompareTag("Spike"))
+        {
+            switchManager.deathscreen();
+        }
     }
 }
