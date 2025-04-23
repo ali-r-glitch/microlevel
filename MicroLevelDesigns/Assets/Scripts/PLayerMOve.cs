@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class Playermove : MonoBehaviour
 {
-    public float moveSpeed;
+    private float moveSpeed=18f;
     public SwitchManager switchManager;
     private void FixedUpdate()
     {
@@ -18,7 +18,7 @@ public class Playermove : MonoBehaviour
 
     private void OnCollisionEnter(Collision other)
     {
-        if (other.gameObject.CompareTag("enemy")||other.gameObject.CompareTag("Spike"))
+        if (other.gameObject.CompareTag("3d")||other.gameObject.CompareTag("Spike"))
         {
             switchManager.deathscreen();
         }

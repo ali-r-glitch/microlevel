@@ -9,7 +9,7 @@ public class New3dplayer : MonoBehaviour
     
     [SerializeField]private GameObject player;
 
-    [SerializeField]private float speed;
+    private float speed=19f;
     [SerializeField]private GameObject othergaem;
     // Start is called before the first frame update
     private void Awake()
@@ -20,7 +20,7 @@ public class New3dplayer : MonoBehaviour
     // Update is called once per frame
     private void FixedUpdate()
     {
-        transform.position=Vector3.MoveTowards(transform.position,player.transform.position,speed);
+        transform.position=Vector3.MoveTowards(transform.position,player.transform.position,speed*  Time.deltaTime);
     }
     public void swap()
     {

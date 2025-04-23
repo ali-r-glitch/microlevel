@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.PlayerLoop;
+using UnityEngine.SceneManagement;
 
 public class SwitchManager : MonoBehaviour
 {
@@ -16,6 +17,7 @@ public class SwitchManager : MonoBehaviour
 
     public GameObject player2d;
     [SerializeField]private GameObject nextlevel;
+    [SerializeField] private GameObject uideathscreen;
 
     // Start is called before the first frame update
     void Start()
@@ -25,7 +27,20 @@ public class SwitchManager : MonoBehaviour
 
     public void deathscreen()
     {
+        uideathscreen.SetActive(true);   
         Debug.Log("deathscreen");
+        
+    }
+    public void QuitGame()
+    {
+        Application.Quit();
+    }
+
+    public void respawncharacter()
+    {
+        Scene currentScene = SceneManager.GetActiveScene();
+        SceneManager.LoadScene(currentScene.name);
+        
     }
 
     // Update is called once per frame

@@ -27,4 +27,7 @@ public class sceneman : MonoBehaviour
         SceneManager.LoadScene(nextSceneIndex);
     
     }
+
+  
+    
 }

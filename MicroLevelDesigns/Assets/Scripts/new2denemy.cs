@@ -14,7 +14,7 @@ public class new2denemy : MonoBehaviour
     public bool bright;
     [SerializeField]private GameObject othergaem;
 
-    [SerializeField]private float speed;
+    private float speed=19f;
     // Start is called before the first frame update
     private Rigidbody rb;
     private void Awake()
