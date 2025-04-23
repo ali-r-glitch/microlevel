@@ -15,6 +15,7 @@ public class SwitchManager : MonoBehaviour
     public GameObject player3d;
 
     public GameObject player2d;
+    [SerializeField]private GameObject nextlevel;
 
     // Start is called before the first frame update
     void Start()
@@ -30,6 +31,15 @@ public class SwitchManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (objects3d.Length != 0)
+        {
+            if (objects2d[0] == null || objects3d[0] == null)
+     
+            {
+                nextlevel.SetActive(true);
+            }
+        }
+       
         if (Input.GetKeyDown(KeyCode.E))
         {
             Debug.Log("E");
@@ -74,7 +84,11 @@ public class SwitchManager : MonoBehaviour
                         scripts3d.swap();
                 }
             }
+            
+            
         }
+       
+       
 
         b3d = !b3d;
     }

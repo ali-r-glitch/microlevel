@@ -2671,6 +2671,7 @@ MonoBehaviour:
   - {fileID: 433177487}
   player3d: {fileID: 1563904060}
   player2d: {fileID: 586271548}
+  nextlevel: {fileID: 1612958427}
 --- !u!4 &2090649225
 Transform:
   m_ObjectHideFlags: 0
