@@ -19,7 +19,7 @@ public class Player2d : MonoBehaviour
     // Clamp bounds
     private float minX = -87f;
      private float maxX = 15f;
-     private float minZ = -159f;
+     private float minZ = 59f;
     private float maxZ = 163f;
 
     private void Start()
