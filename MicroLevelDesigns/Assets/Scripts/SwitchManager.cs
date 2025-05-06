@@ -42,18 +42,31 @@ public class SwitchManager : MonoBehaviour
         SceneManager.LoadScene(currentScene.name);
         
     }
+    bool AllEnemiesDead()
+    {
+        foreach (GameObject obj in objects3d)
+        {
+            if (obj != null) return false;
+        }
+
+        foreach (GameObject obj in objects2d)
+        {
+            if (obj != null) return false;
+        }
+
+        return true;
+    }
+
 
     // Update is called once per frame
     void Update()
     {
-        if (objects3d.Length != 0)
+        if (AllEnemiesDead())
         {
-            if (objects2d[0] == null || objects3d[0] == null)
-     
-            {
-                nextlevel.SetActive(true);
-            }
+            nextlevel.SetActive(true);
         }
+
+
        
         if (Input.GetKeyDown(KeyCode.E))
         {
