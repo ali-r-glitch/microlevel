@@ -1,17 +1,19 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+
 public class sceneman : MonoBehaviour
 {
-    public string sceneNa;
-    // Start is called before the first frame update
+ 
+
+    public string sceneToLoad;
+    public EntranceID entranceUsed;
+
     private void OnCollisionEnter(Collision other)
     {
-        if (other.gameObject.tag == "Player")
+        if (other.gameObject.CompareTag("Player"))
         {
-            LoadSceneByName(sceneNa);
+            GameManager.Instance.lastEntrance = entranceUsed;
+            SceneManager.LoadScene(sceneToLoad);
         }
     }
 
@@ -20,14 +22,9 @@ public class sceneman : MonoBehaviour
         SceneManager.LoadScene(sceneName);
     }
 
-    // Load next scene in build index
     public void LoadNextScene()
     {
-        int nextSceneIndex = (SceneManager.GetActiveScene().buildIndex + 1) % 2;
+        int nextSceneIndex = (SceneManager.GetActiveScene().buildIndex + 1) % SceneManager.sceneCountInBuildSettings;
         SceneManager.LoadScene(nextSceneIndex);
-    
     }
-
-  
-    
 }
