@@ -3451,6 +3451,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sceneToLoad: Level4
   entranceUsed: 0
+  markThisLevelCompleteBeforeLoading: 0
 --- !u!1 &1679001239
 GameObject:
   m_ObjectHideFlags: 0
@@ -3500,6 +3501,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sceneToLoad: Level3
   entranceUsed: 2
+  markThisLevelCompleteBeforeLoading: 0
 --- !u!136 &1679001242
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -4120,7 +4122,7 @@ PrefabInstance:
     - target: {fileID: 8742800191812417115, guid: fc2582b04913d914281f00dd8c0e41be, type: 3}
       propertyPath: m_NavMeshData
       value: 
-      objectReference: {fileID: 23800000, guid: 93ec048ab42994645ac33050bfa457aa, type: 2}
+      objectReference: {fileID: 23800000, guid: 82afa0086dfda6a4283056d56757e854, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

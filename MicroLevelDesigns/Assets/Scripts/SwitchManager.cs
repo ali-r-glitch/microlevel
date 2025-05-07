@@ -22,7 +22,12 @@ public class SwitchManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        // Show nextlevel immediately if level was already completed
+        string currentScene = SceneManager.GetActiveScene().name;
+        if (GameManager.Instance.IsLevelComplete(currentScene))
+        {
+            nextlevel.SetActive(true);
+        }
     }
 
     public void deathscreen()
@@ -61,9 +66,11 @@ public class SwitchManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (AllEnemiesDead())
+        if (AllEnemiesDead() && !nextlevel.activeSelf)
         {
             nextlevel.SetActive(true);
+            string currentScene = SceneManager.GetActiveScene().name;
+            GameManager.Instance.MarkLevelComplete(currentScene);
         }
 
 
