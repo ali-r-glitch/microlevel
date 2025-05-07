@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class Playermove : MonoBehaviour
 {
-    private float moveSpeed = 18f;
+    private float moveSpeed = 25f;
     public SwitchManager switchManager;
 
     // Clamp bounds (adjust to fit your level size)

@@ -2042,6 +2042,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b684429982d5ab4f80ce226e252f15b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  moveSpeed: 19
   jumpForce: 24
   groundLayer:
     serializedVersion: 2
@@ -2088,7 +2089,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 9773f880e41642347b3af90fbc1f3de1, type: 2}
+  - {fileID: 2100000, guid: 8a7493d8a70ab1a4b9901f3357551a37, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
